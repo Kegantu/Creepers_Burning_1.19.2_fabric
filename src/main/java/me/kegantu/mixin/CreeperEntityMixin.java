@@ -1,8 +1,7 @@
 package me.kegantu.mixin;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.AvoidSunlightGoal;
-import net.minecraft.entity.ai.goal.EscapeSunlightGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.world.World;
@@ -25,13 +24,13 @@ public abstract class CreeperEntityMixin extends HostileEntity {
 	}
 
 	@Override
-	public void tick() {
+	public void tickMovement() {
 		if (this.isAlive()){
 			boolean AffectedBySunLight = this.isAffectedByDaylight();
 			if (AffectedBySunLight){
 				this.setOnFireFor(6);
 			}
 		}
-		super.tick();
+		super.tickMovement();
 	}
 }
