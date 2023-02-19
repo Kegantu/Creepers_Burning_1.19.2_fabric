@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "me.kegantu.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"CreeperEntityMixin"
+	],
+	"server": [
+		"CreeperEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
